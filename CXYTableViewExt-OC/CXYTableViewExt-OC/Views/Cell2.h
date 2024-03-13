@@ -9,6 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol Cell2Delegate <NSObject>
+
+- (void)Cell2DelegateSwitchChanged:(BOOL)isOn indexPath:(NSIndexPath*)indexPath;
+
+@end
+
 @interface Cell2 : UITableViewCell
 
 @end
