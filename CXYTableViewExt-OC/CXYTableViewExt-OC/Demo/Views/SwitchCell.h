@@ -1,5 +1,5 @@
 //
-//  Cell2.h
+//  SwitchCell.h
 //  CXYTableViewExt-OC
 //
 //  Created by cxy on 2024/3/13.
@@ -11,11 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol Cell2Delegate <NSObject>
 
-- (void)Cell2DelegateSwitchChanged:(BOOL)isOn indexPath:(NSIndexPath*)indexPath;
+- (void)Cell2DelegateSwitchChanged:(BOOL)isOn;
 
 @end
 
-@interface Cell2 : UITableViewCell
+@interface SwitchCell : UITableViewCell
 
 @end
 

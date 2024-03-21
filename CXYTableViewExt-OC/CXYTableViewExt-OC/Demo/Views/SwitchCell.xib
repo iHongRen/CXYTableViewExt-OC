@@ -9,21 +9,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="Cell2">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="KGk-i7-Jjw" customClass="SwitchCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti3-ph-5lf">
-                        <rect key="frame" x="16" y="20.666666666666664" width="42" height="20.666666666666664"/>
+                        <rect key="frame" x="15" y="15" width="42" height="26"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-kR-0Us">
-                        <rect key="frame" x="253" y="15.666666666666664" width="51" height="31"/>
+                        <rect key="frame" x="253" y="12.666666666666664" width="51" height="31"/>
                         <connections>
                             <action selector="onSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="2gI-Lr-Yw8"/>
                         </connections>
@@ -32,9 +32,9 @@
                 <constraints>
                     <constraint firstItem="ti3-ph-5lf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1iB-hF-wLS"/>
                     <constraint firstItem="GfS-kR-0Us" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3kC-wH-Vzq"/>
-                    <constraint firstItem="ti3-ph-5lf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Fq-wJ-b0I"/>
-                    <constraint firstItem="ti3-ph-5lf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20.666666666666668" id="CNo-P7-gLS"/>
-                    <constraint firstAttribute="bottom" secondItem="ti3-ph-5lf" secondAttribute="bottom" constant="20.666666666666671" id="DkQ-OS-icd"/>
+                    <constraint firstItem="ti3-ph-5lf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="8Fq-wJ-b0I"/>
+                    <constraint firstItem="ti3-ph-5lf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="CNo-P7-gLS"/>
+                    <constraint firstAttribute="bottom" secondItem="ti3-ph-5lf" secondAttribute="bottom" constant="15" id="DkQ-OS-icd"/>
                     <constraint firstAttribute="trailing" secondItem="GfS-kR-0Us" secondAttribute="trailing" constant="18" id="rip-nn-KqX"/>
                 </constraints>
             </tableViewCellContentView>
@@ -43,7 +43,7 @@
                 <outlet property="switchView" destination="GfS-kR-0Us" id="OlQ-s9-IJx"/>
                 <outlet property="title" destination="ti3-ph-5lf" id="1mt-A0-IMd"/>
             </connections>
-            <point key="canvasLocation" x="77.862595419847324" y="26.056338028169016"/>
+            <point key="canvasLocation" x="77.862595419847324" y="23.943661971830988"/>
         </tableViewCell>
     </objects>
 </document>
