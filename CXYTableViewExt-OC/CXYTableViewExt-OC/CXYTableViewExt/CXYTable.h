@@ -36,14 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addHeaderItem:(Class)headerClass data:(id _Nullable)data delegate:(id _Nullable)delegate;
 - (void)addHeaderItem:(Class)headerClass data:(id _Nullable)data;
 
-- (void)addCellItem:(Class)cellClass data:(id _Nullable)data;
-- (void)addCellItem:(Class)cellClass delegate:(id _Nullable)delegate;
-- (void)addCellItem:(Class)cellClass data:(id _Nullable)data delegate:(id _Nullable)delegate;
-- (void)addCellItem:(Class)cellClass didSelectBlock:(CXYTableItemBlock _Nullable)block;
-- (void)addCellItem:(Class)cellClass data:(id _Nullable)data didSelectBlock:(CXYTableItemBlock _Nullable)block;
+- (void)addCellClass:(Class)cellClass data:(id _Nullable)data;
+- (void)addCellClass:(Class)cellClass delegate:(id _Nullable)delegate;
+- (void)addCellClass:(Class)cellClass data:(id _Nullable)data delegate:(id _Nullable)delegate;
+- (void)addCellClass:(Class)cellClass didSelectBlock:(CXYTableItemBlock _Nullable)block;
+- (void)addCellClass:(Class)cellClass data:(id _Nullable)data didSelectBlock:(CXYTableItemBlock _Nullable)block;
 
-- (void)addCellItems:(Class)cellClass dataList:(NSArray *)dataList delegate:(id _Nullable)delegate;
-- (void)addCellItems:(Class)cellClass dataList:(NSArray *)dataList didSelectBlock:(CXYTableItemBlock _Nullable)block;
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList;
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList delegate:(id _Nullable)delegate;
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList didSelectBlock:(CXYTableItemBlock _Nullable)block;
 
 - (void)addFooterItem:(Class)footerClass data:(id _Nullable)data delegate:(id _Nullable)delegate;
 - (void)addFooterItem:(Class)footerClass data:(id _Nullable)data;

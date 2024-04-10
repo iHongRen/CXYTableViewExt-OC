@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseListController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsController : UIViewController
+@interface NewsController : BaseListController
 
 @end
 

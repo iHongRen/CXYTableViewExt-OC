@@ -55,36 +55,6 @@
             </objects>
             <point key="canvasLocation" x="-378" y="-125"/>
         </scene>
-        <!--Setting Controller-->
-        <scene sceneID="fKC-g7-0j0">
-            <objects>
-                <viewController id="EI3-a9-dGe" customClass="SettingController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JMO-EL-shG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="nff-1n-B3M"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ngu-1v-5vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="324" y="-125"/>
-        </scene>
-        <!--News Controller-->
-        <scene sceneID="Vyu-6J-bl4">
-            <objects>
-                <viewController id="Jqf-hy-5b8" customClass="NewsController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c3l-A1-gTA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="cFi-74-nea"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="snu-ng-tRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1066" y="-119"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

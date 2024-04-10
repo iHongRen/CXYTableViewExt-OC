@@ -37,18 +37,21 @@
 
     [self.tableView.t makeItems:^(CXYTable * _Nonnull make) {
         
-        [make addCellItem:ArrowTextCell.class data:@"设置页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
+        [make addCellClass:ArrowTextCell.class data:@"设置页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
             SettingController *c = [SettingController new];
+            c.title = data;
             [weakSelf.navigationController pushViewController:c animated:YES];
         }];
         
-        [make addCellItem:ArrowTextCell.class data:@"资讯列表示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
+        [make addCellClass:ArrowTextCell.class data:@"资讯列表示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
             NewsController *c = [NewsController new];
+            c.title = data;
             [weakSelf.navigationController pushViewController:c animated:YES];
         }];
         
-        [make addCellItem:ArrowTextCell.class data:@"多cell首页页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
+        [make addCellClass:ArrowTextCell.class data:@"多cell首页页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
             HomeController *c = [HomeController new];
+            c.title = data;
             [weakSelf.navigationController pushViewController:c animated:YES];
         }];
     }];

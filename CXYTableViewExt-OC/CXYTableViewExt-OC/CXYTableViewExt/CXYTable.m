@@ -160,27 +160,27 @@
     [self addHeaderItem:headerClass data:data delegate:nil];
 }
 
-- (void)addCellItem:(Class)cellClass data:(id)data {
-    [self addCellItem:cellClass data:data delegate:nil];
+- (void)addCellClass:(Class)cellClass data:(id)data {
+    [self addCellClass:cellClass data:data delegate:nil];
 }
 
-- (void)addCellItem:(Class)cellClass delegate:(id)delegate {
-    [self addCellItem:cellClass data:nil delegate:delegate];
+- (void)addCellClass:(Class)cellClass delegate:(id)delegate {
+    [self addCellClass:cellClass data:nil delegate:delegate];
 }
 
-- (void)addCellItem:(Class)cellClass data:(id)data delegate:(id)delegate {
-    [self addCellItem:cellClass data:data delegate:delegate didSelectBlock:nil];
+- (void)addCellClass:(Class)cellClass data:(id)data delegate:(id)delegate {
+    [self addCellClass:cellClass data:data delegate:delegate didSelectBlock:nil];
 }
 
-- (void)addCellItem:(Class)cellClass didSelectBlock:(CXYTableItemBlock)block {
-    [self addCellItem:cellClass data:nil delegate:nil didSelectBlock:block];
+- (void)addCellClass:(Class)cellClass didSelectBlock:(CXYTableItemBlock)block {
+    [self addCellClass:cellClass data:nil delegate:nil didSelectBlock:block];
 }
 
-- (void)addCellItem:(Class)cellClass data:(id)data didSelectBlock:(CXYTableItemBlock)block {
-    [self addCellItem:cellClass data:data delegate:nil didSelectBlock:block];
+- (void)addCellClass:(Class)cellClass data:(id)data didSelectBlock:(CXYTableItemBlock)block {
+    [self addCellClass:cellClass data:data delegate:nil didSelectBlock:block];
 }
 
-- (void)addCellItem:(Class)cellClass data:(id)data delegate:(id)delegate didSelectBlock:(CXYTableItemBlock)block {
+- (void)addCellClass:(Class)cellClass data:(id)data delegate:(id)delegate didSelectBlock:(CXYTableItemBlock)block {
     [self registerIfNeed:cellClass];
     [self useDefaultDataSourceIfNeed];
     
@@ -199,7 +199,11 @@
     [last.cellItems addObject:item];
 }
 
-- (void)addCellItems:(Class)cellClass dataList:(NSArray *)dataList delegate:(id)delegate {
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList {
+    [self addCellClass:cellClass dataList:dataList delegate:nil];
+}
+
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList delegate:(id)delegate {
     if (dataList.count == 0) {
         return;
     }
@@ -210,11 +214,12 @@
         item.itemClass = cellClass;
         item.data = data;
         item.delegate = delegate;
+        [cellItems addObject:item];
     }
-    [self addCellItems:cellClass items:cellItems];
+    [self addCellClass:cellClass items:cellItems];
 }
 
-- (void)addCellItems:(Class)cellClass dataList:(NSArray *)dataList didSelectBlock:(CXYTableItemBlock _Nullable)block {
+- (void)addCellClass:(Class)cellClass dataList:(NSArray *)dataList didSelectBlock:(CXYTableItemBlock _Nullable)block {
     if (dataList.count == 0) {
         return;
     }
@@ -225,11 +230,12 @@
         item.itemClass = cellClass;
         item.data = data;
         item.itemBlock = block;
+        [cellItems addObject:item];
     }
-    [self addCellItems:cellClass items:cellItems];
+    [self addCellClass:cellClass items:cellItems];
 }
 
-- (void)addCellItems:(Class)cellClass items:(NSArray<CXYTableItem*> *)items {
+- (void)addCellClass:(Class)cellClass items:(NSArray<CXYTableItem*> *)items {
     if (items.count == 0) {
         return;
     }
