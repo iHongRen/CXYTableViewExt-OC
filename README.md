@@ -1,6 +1,8 @@
 # CXYTableViewExt-OC
 Make it easier for you to configure and use UITableView.
 
+如果你在寻找 Swift 版本的话，可以看这里 https://github.com/iHongRen/CXYTableViewExt-Swift
+
 #### 几乎在你用到 UITableView 的地方，都可以使用 CXYTableViewExt 来简化代码和逻辑。
 
 使用 CXYTableViewExt， 大多数时候你都无需编写类似下面的代码
