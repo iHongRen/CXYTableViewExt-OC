@@ -244,7 +244,7 @@
     [self useDefaultDataSourceIfNeed];
     
     CXYTableSectionItem *last = self.sectionItems.lastObject;
-    if (!last || !last.footerItem) {
+    if (!last || last.footerItem) {
         last = [CXYTableSectionItem new];
         [self.sectionItems addObject:last];
     }

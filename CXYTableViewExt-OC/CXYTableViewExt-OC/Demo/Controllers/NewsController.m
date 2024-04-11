@@ -8,6 +8,7 @@
 #import "NewsController.h"
 #import "NewsCell.h"
 #import "MJRefresh.h"
+#import "NewsModel.h"
 
 @interface NewsController ()
 
@@ -26,11 +27,11 @@
 
 - (void)configTable {
     MJWeakSelf
-    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf requestPage:1];
     }];
     
-    self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf requestPage:weakSelf.page+1];
     }];
 }
@@ -38,12 +39,21 @@
 - (void)requestPage:(NSInteger)page {
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray *res = @[@0,@0,@0,@0,@0];
+        NSMutableArray *res = @[].mutableCopy;
+        for (NSInteger i=0; i<10; i++) {
+            NewsModel *model = [NewsModel new];
+            model.title = @"新闻标题";
+            model.desc = @"新闻摘要";
+            model.img = @"cover";
+            [res addObject:model];
+        }
+       
         if (page==1) {
             self.list = res;
         } else {
             self.list = [self.list arrayByAddingObjectsFromArray:res];
         }
+        self.page = page;
         [self endRefreshing];
         [self bindViewData];
     });
@@ -64,4 +74,10 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NewsModel *model = [self.tableView.t cellItemDataAtIndexPath:indexPath];
+    NSLog(@"%@ %zd", model.title, indexPath.row);
+}
 @end

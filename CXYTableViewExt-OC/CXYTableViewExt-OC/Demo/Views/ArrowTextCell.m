@@ -20,6 +20,7 @@
     // Initialization code
 }
 
+#pragma mark - CXYTableItemProtocol
 - (void)configData:(id)data {
     self.title.text = data;
 }

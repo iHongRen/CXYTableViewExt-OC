@@ -1,29 +1,28 @@
 //
-//  Cell1.m
+//  HeadTitleCell.m
 //  CXYTableViewExt-OC
 //
-//  Created by cxy on 2024/3/13.
+//  Created by cxy on 2024/4/11.
 //
 
-#import "Cell1.h"
-#import "UITableView+CXYExt.h"
+#import "HeadTitleCell.h"
+#import "CXYTableItemProtocol.h"
 
-@interface Cell1 ()<CXYTableItemProtocol>
+@interface HeadTitleCell ()<CXYTableItemProtocol>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end
-@implementation Cell1
+@implementation HeadTitleCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
-+ (CGFloat)heightForData:(id)data {
-    return 80;
-}
-
+#pragma mark - CXYTableItemProtocol
 - (void)configData:(id)data {
     self.title.text = data;
 }
+
+
 @end

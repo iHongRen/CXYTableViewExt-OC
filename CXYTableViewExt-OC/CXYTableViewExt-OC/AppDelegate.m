@@ -16,7 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [UITableView appearance].sectionHeaderTopPadding = 0;
+    if (@available(iOS 15.0, *)) {
+        [UITableView appearance].sectionHeaderTopPadding = 0;
+    }
     return YES;
 }
 

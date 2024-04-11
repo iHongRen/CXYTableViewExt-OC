@@ -10,15 +10,9 @@
 
 #import "ArrowTextCell.h"
 
-#import "Cell1.h"
-#import "SwitchCell.h"
-
-#import "Header1.h"
-#import "Footer1.h"
-
 #import "SettingController.h"
-#import "HomeController.h"
 #import "NewsController.h"
+#import "HeaderFooterController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,13 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *bg = UIView.new;
+    bg.userInteractionEnabled = NO;
+    bg.backgroundColor = UIColor.whiteColor;
+    bg.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 100);
+    UIView *v = self.navigationController.navigationBar.subviews.firstObject;
+    v.clipsToBounds = YES;
+    [v insertSubview:bg atIndex:0];
+    
     [self bindViewData];
 }
 
 - (void)bindViewData {
-    
     __weak typeof(self) weakSelf = self;
-
+    
     [self.tableView.t makeItems:^(CXYTable * _Nonnull make) {
         
         [make addCellClass:ArrowTextCell.class data:@"设置页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
@@ -49,8 +50,8 @@
             [weakSelf.navigationController pushViewController:c animated:YES];
         }];
         
-        [make addCellClass:ArrowTextCell.class data:@"多cell首页页示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
-            HomeController *c = [HomeController new];
+        [make addCellClass:ArrowTextCell.class data:@"Section Header & Footer 示例" didSelectBlock:^(id  _Nonnull data, NSIndexPath * _Nonnull indexPath) {
+            HeaderFooterController *c = [HeaderFooterController new];
             c.title = data;
             [weakSelf.navigationController pushViewController:c animated:YES];
         }];

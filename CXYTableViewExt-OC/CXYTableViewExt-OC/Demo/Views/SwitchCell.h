@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol Cell2Delegate <NSObject>
+@protocol SwitchCellDelegate <NSObject>
 
-- (void)Cell2DelegateSwitchChanged:(BOOL)isOn;
+- (void)switchCellDelegateSwitchChanged:(id)data;
 
 @end
 

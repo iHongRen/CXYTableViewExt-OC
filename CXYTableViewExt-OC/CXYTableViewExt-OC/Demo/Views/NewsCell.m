@@ -7,6 +7,7 @@
 
 #import "NewsCell.h"
 #import "CXYTableItemProtocol.h"
+#import "NewsModel.h"
 
 @interface NewsCell ()<CXYTableItemProtocol>
 @property (weak, nonatomic) IBOutlet UIImageView *cover;
@@ -19,13 +20,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-
 }
 
 #pragma mark - CXYTableItemProtocol
-- (void)configData:(id)data {
-    self.cover.image = [UIImage imageNamed:@"cover"];
+- (void)configData:(NewsModel*)data {
+    self.cover.image = [UIImage imageNamed:data.img];
+    self.title.text = data.title;
+    self.desc.text = data.desc;
 }
 
 @end
