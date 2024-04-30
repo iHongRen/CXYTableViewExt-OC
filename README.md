@@ -29,6 +29,14 @@ self.tableView.delegate = self;
 
 # 如何使用
 
+使用 **CocoaPods** - `pod install --repo-update`
+
+```ruby
+pod 'CXYTableViewExt-OC'
+```
+
+
+
 #### 简单使用
 
 <img src="./screenshots/home.png" width=300>
